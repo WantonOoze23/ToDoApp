@@ -17,7 +17,6 @@ class ToDoEditViewModel @Inject constructor(
     private val repository: ToDoRepository
 ) : ViewModel() {
 
-
     private val _todoState = MutableStateFlow(ToDoState())
     val toDoState: StateFlow<ToDoState> = _todoState.asStateFlow()
 
