@@ -12,8 +12,13 @@ fun ToDosScreen(
     viewModel: ToDoViewViewModel = hiltViewModel()
 ){
     val publicIP by viewModel.publicIP.collectAsState()
-
+    val todos by viewModel.todos.collectAsState()
     Text(
         text = publicIP
     )
+
+    Text(
+        text = todos.toString()
+    )
+
 }

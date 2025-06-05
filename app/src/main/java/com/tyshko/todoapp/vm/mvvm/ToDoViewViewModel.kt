@@ -1,5 +1,6 @@
 package com.tyshko.todoapp.vm.mvvm
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tyshko.domain.model.ToDoModel
@@ -7,7 +8,6 @@ import com.tyshko.domain.repository.ToDoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -27,7 +27,7 @@ class ToDoViewViewModel @Inject constructor(
             try {
                 _publicIP.value = repository.getUserIP()
             } catch (_: Exception){
-                _publicIP.value = "Uneble to get current IP"
+                _publicIP.value = "Unable to get current IP"
             }
         }
         viewModelScope.launch {
@@ -36,6 +36,8 @@ class ToDoViewViewModel @Inject constructor(
             }
         }
     }
+
+
 
 
 }
