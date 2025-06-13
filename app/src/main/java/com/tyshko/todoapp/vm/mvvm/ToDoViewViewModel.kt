@@ -1,6 +1,5 @@
 package com.tyshko.todoapp.vm.mvvm
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tyshko.domain.model.ToDoModel
@@ -37,7 +36,18 @@ class ToDoViewViewModel @Inject constructor(
         }
     }
 
+    fun deleteToDO(id: Long){
+        viewModelScope.launch {
+            repository.deleteToDO(id)
+        }
+    }
 
+    fun onCheckClick(toDoModel: ToDoModel) {
+        viewModelScope.launch {
+            val updatedToDo = toDoModel.copy(isCompleted = !toDoModel.isCompleted)
+            repository.updateToDo(updatedToDo)
+        }
+    }
 
 
 }

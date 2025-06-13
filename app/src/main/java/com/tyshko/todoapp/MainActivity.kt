@@ -1,5 +1,6 @@
 package com.tyshko.todoapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,48 +14,22 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.tyshko.todoapp.navigation.ToDoNavigation
 import com.tyshko.todoapp.ui.theme.ToDoAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
+    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         setContent {
             ToDoAppTheme {
-
-                Scaffold(modifier = Modifier
-                    .fillMaxSize()
-                    .statusBarsPadding()
-                ) { innerPadding ->
-                    Column {
-                        Greeting(
-                            name = "a",
-                            modifier = Modifier.padding(innerPadding)
-                        )
-                        ToDosScreen()
-                    }
-                }
+                ToDoNavigation()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ToDoAppTheme {
-        Greeting("Android")
     }
 }
