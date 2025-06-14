@@ -1,5 +1,3 @@
-@file:Suppress("UNREACHABLE_CODE")
-
 package com.tyshko.todoapp.navigation
 
 import androidx.compose.runtime.Composable
@@ -30,7 +28,6 @@ fun ToDoNavigation(
         }
         composable("main"){
             ToDosScreen(
-                onEdit = {},
                 navController = navController,
             )
         }

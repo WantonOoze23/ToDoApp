@@ -21,7 +21,6 @@ import androidx.navigation.NavController
 import com.tyshko.todoapp.vm.mvi.ToDoEditViewModel
 import com.tyshko.todoapp.vm.mvi.ToDoIntent
 
-@OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("RememberReturnType")
 @Composable
 fun ViewEditScreen(

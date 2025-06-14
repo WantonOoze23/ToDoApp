@@ -36,7 +36,7 @@ class ToDoViewViewModel @Inject constructor(
         }
     }
 
-    fun deleteToDO(id: Long){
+    fun deleteToDo(id: Long){
         viewModelScope.launch {
             repository.deleteToDO(id)
         }
@@ -48,6 +48,4 @@ class ToDoViewViewModel @Inject constructor(
             repository.updateToDo(updatedToDo)
         }
     }
-
-
 }

@@ -2,6 +2,7 @@ package com.tyshko.todoapp.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -47,7 +48,8 @@ fun LoadingScreen(
                             .size(150.dp)
                             .padding(8.dp)
                             .background(
-                                if (index == activeBoxIndex) Color.Red else Color.Green
+                                if (index == activeBoxIndex) Color.Red else Color.Green,
+                                shape = RoundedCornerShape(16.dp) 
                             )
                     )
                 }

@@ -15,11 +15,6 @@ import androidx.compose.material3.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 
-@Composable
-fun ToDoSwipeableCard(modifier: Modifier = Modifier) {
-
-
-}
 
 @Composable
 fun ToDoCard(
