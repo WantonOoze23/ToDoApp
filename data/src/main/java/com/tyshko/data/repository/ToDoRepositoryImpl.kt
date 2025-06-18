@@ -8,9 +8,8 @@ import com.tyshko.domain.model.ToDoModel
 import com.tyshko.domain.repository.ToDoRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
-class ToDoRepositoryImpl @Inject constructor(
+class ToDoRepositoryImpl(
     private val toDoDao: ToDoDao,
     private val networkApi: NetworkApi
 ) : ToDoRepository{

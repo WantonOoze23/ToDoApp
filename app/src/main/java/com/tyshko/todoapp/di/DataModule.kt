@@ -1,4 +1,4 @@
-package com.tyshko.data.di
+package com.tyshko.todoapp.di
 
 import android.content.Context
 import androidx.room.Room

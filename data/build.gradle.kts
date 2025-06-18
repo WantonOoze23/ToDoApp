@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.kotlin.android)
 
     id("com.google.devtools.ksp")
-    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -46,10 +45,6 @@ dependencies {
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
-
-    // Hilt
-    implementation("com.google.dagger:hilt-android:2.56.2")
-    ksp("com.google.dagger:hilt-android-compiler:2.56.2")
 
     // Room
     ksp("androidx.room:room-compiler:2.7.1")
