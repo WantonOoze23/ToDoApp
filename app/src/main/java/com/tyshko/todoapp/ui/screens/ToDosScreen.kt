@@ -1,7 +1,6 @@
 package com.tyshko.todoapp.ui.screens
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -31,13 +30,13 @@ import com.tyshko.todoapp.ui.components.ToDoCard
 import com.tyshko.todoapp.vm.mvvm.ToDoViewViewModel
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalFoundationApi::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun ToDosScreen(
     viewModel: ToDoViewViewModel = hiltViewModel(),
     navController: NavController,
 ) {
+
     val toDoList by viewModel.todos.collectAsState()
     val userIP by viewModel.publicIP.collectAsState()
 
@@ -106,7 +105,7 @@ fun ToDosScreen(
                                 )
                             }
                         },
-                        modifier = Modifier.animateItemPlacement()
+                        modifier = Modifier.animateItem()
                     ) {
                         ToDoCard(
                             todo = todo,

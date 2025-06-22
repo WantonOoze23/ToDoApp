@@ -60,5 +60,4 @@ class DataModule {
     fun provideRepository( toDoDao: ToDoDao, networkApi: NetworkApi): ToDoRepository {
         return ToDoRepositoryImpl(toDoDao, networkApi)
     }
-
 }

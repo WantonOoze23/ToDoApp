@@ -1,6 +1,5 @@
 package com.tyshko.domain.model
 
-
 data class ToDoModel(
     val id: Long,
     val title: String,
