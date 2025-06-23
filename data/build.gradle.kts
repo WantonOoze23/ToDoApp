@@ -49,7 +49,7 @@ dependencies {
     // Room
     ksp(libs.androidx.room.compiler)
     implementation(libs.room.runtime)
-    implementation("androidx.room:room-ktx:2.7.1")
+    implementation(libs.androidx.room.ktx)
 
 
     testImplementation(libs.junit)
