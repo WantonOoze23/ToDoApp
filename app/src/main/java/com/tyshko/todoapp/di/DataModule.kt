@@ -1,4 +1,4 @@
-package com.tyshko.data.di
+package com.tyshko.todoapp.di
 
 import android.content.Context
 import androidx.room.Room
@@ -60,5 +60,4 @@ class DataModule {
     fun provideRepository( toDoDao: ToDoDao, networkApi: NetworkApi): ToDoRepository {
         return ToDoRepositoryImpl(toDoDao, networkApi)
     }
-
 }

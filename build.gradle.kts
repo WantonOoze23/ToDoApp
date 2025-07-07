@@ -7,15 +7,15 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.jvm) apply false
 
     // Ksp
-    id("com.google.devtools.ksp") version "2.0.21-1.0.26" apply false
+    alias(libs.plugins.google.ksp) apply false
 
     // Hilt
-    id("com.google.dagger.hilt.android") version "2.56.2" apply false
+    alias(libs.plugins.hilt) apply false
 
 }
 
 buildscript {
     dependencies {
-        classpath("com.google.dagger:hilt-android-gradle-plugin:2.56.2")
+        classpath(libs.hilt.android.gradle.plugin)
     }
 }

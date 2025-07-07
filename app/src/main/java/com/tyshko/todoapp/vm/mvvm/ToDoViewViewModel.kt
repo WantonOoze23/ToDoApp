@@ -7,7 +7,6 @@ import com.tyshko.domain.repository.ToDoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -27,7 +26,7 @@ class ToDoViewViewModel @Inject constructor(
             try {
                 _publicIP.value = repository.getUserIP()
             } catch (_: Exception){
-                _publicIP.value = "Uneble to get current IP"
+                _publicIP.value = "Unable to get current IP"
             }
         }
         viewModelScope.launch {
@@ -37,5 +36,16 @@ class ToDoViewViewModel @Inject constructor(
         }
     }
 
+    fun deleteToDo(id: Long){
+        viewModelScope.launch {
+            repository.deleteToDO(id)
+        }
+    }
 
+    fun onCheckClick(toDoModel: ToDoModel) {
+        viewModelScope.launch {
+            val updatedToDo = toDoModel.copy(isCompleted = !toDoModel.isCompleted)
+            repository.updateToDo(updatedToDo)
+        }
+    }
 }
