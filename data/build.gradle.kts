@@ -38,8 +38,8 @@ dependencies {
     implementation(project(":domain"))
 
     // Ktor
-    implementation(libs.io.ktor.ktor.client.core)
-    implementation(libs.io.ktor.ktor.client.cio)
+    implementation(libs.ktor.ktor.client.core)
+    implementation(libs.ktor.ktor.client.cio)
     implementation(libs.ktor.client.content.negotiation)
     implementation(libs.ktor.serialization.kotlinx.json)
 
