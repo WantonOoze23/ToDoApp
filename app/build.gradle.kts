@@ -40,6 +40,11 @@ android {
     buildFeatures {
         compose = true
     }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{LICENSE.md,LICENSE-notice.md,LICENSE.txt,NOTICE.txt}"
+        }
+    }
 }
 
 dependencies {
@@ -54,8 +59,12 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
+    implementation(libs.androidx.navigation.testing.android)
+    testImplementation(libs.junit)
     ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+    androidTestImplementation(libs.hilt.android.testing)
+    kspAndroidTest(libs.hilt.compiler)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
@@ -64,7 +73,13 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation(libs.room.runtime)
     implementation(libs.androidx.room.ktx)
+    
+    //Mockk
+    testImplementation(libs.mockk)
+    androidTestImplementation(libs.mockk)
+    androidTestImplementation(libs.mockk.android)
 
+    testImplementation(libs.kotlinx.coroutines.test)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
