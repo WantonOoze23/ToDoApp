@@ -13,6 +13,8 @@ import androidx.compose.ui.unit.*
 import com.tyshko.domain.model.ToDoModel
 import androidx.compose.material3.*
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 
 
@@ -53,7 +55,10 @@ fun ToDoCard(
 
                 Checkbox(
                     checked = todo.isCompleted,
-                    onCheckedChange = onCheckedChange
+                    onCheckedChange = onCheckedChange,
+                    Modifier.semantics {
+                        contentDescription = "CheckBox${todo.id}"
+                    }
                 )
                 Icon(
                     imageVector = Icons.Default.Edit,
