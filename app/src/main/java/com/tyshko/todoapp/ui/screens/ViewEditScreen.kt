@@ -15,6 +15,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.*
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -95,6 +97,9 @@ fun ViewEditScreen(
                 checked = state.isCompleted,
                 onCheckedChange = {
                     viewModel.onIntent(ToDoIntent.SetCompleted(it))
+                },
+                modifier = Modifier.semantics {
+                    contentDescription = "Checkbox"
                 }
             )
             Text(
